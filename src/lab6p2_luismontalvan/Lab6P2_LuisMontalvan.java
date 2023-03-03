@@ -5,9 +5,14 @@
 package lab6p2_luismontalvan;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,7 +27,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     public Lab6P2_LuisMontalvan() {
         initComponents();
         jPSignup.setVisible(false);
-        
+        jPHomePage.setVisible(false);
     }
 
     /**
@@ -34,13 +39,14 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPHomePage = new javax.swing.JPanel();
         jPLogin = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTFUserLogin = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jTFContrasenaLogin = new javax.swing.JTextField();
+        jBtnLogin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -51,7 +57,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         jTFCrearUsuario = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jTFCrearContraseña = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        jBtnSignin = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jSEdad = new javax.swing.JSpinner();
         jLabel9 = new javax.swing.JLabel();
@@ -62,19 +68,37 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        javax.swing.GroupLayout jPHomePageLayout = new javax.swing.GroupLayout(jPHomePage);
+        jPHomePage.setLayout(jPHomePageLayout);
+        jPHomePageLayout.setHorizontalGroup(
+            jPHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+        jPHomePageLayout.setVerticalGroup(
+            jPHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPHomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jLabel2.setText("Iniciar Sesión");
 
         jLabel3.setText("Usuario");
 
         jLabel4.setText("Contraseña");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jTFContrasenaLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jTFContrasenaLoginActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Entrar");
+        jBtnLogin.setText("Entrar");
+        jBtnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnLoginMouseClicked(evt);
+            }
+        });
 
         jLabel1.setText("¿No tienes cuenta?");
 
@@ -95,8 +119,9 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         jPLoginLayout.setHorizontalGroup(
             jPLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPLoginLayout.createSequentialGroup()
+                .addGap(611, 611, 611)
                 .addComponent(jLabel10)
-                .addGap(0, 600, Short.MAX_VALUE))
+                .addGap(1, 1, 1))
             .addGroup(jPLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPLoginLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -105,26 +130,27 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
                             .addGap(190, 190, 190)
                             .addComponent(jLabel2))
                         .addComponent(jLabel3)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTFUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTFContrasenaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPLoginLayout.createSequentialGroup()
                             .addGap(180, 180, 180)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jBtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPLoginLayout.createSequentialGroup()
                             .addGap(10, 10, 10)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton2))
                         .addGroup(jPLoginLayout.createSequentialGroup()
                             .addGap(10, 10, 10)
-                            .addComponent(jButton2)))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPLoginLayout.setVerticalGroup(
             jPLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPLoginLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 253, Short.MAX_VALUE))
+                .addGap(253, 253, 253))
             .addGroup(jPLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPLoginLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -135,13 +161,13 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
                             .addGap(55, 55, 55)
                             .addComponent(jLabel3)
                             .addGap(5, 5, 5)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(21, 21, 21)
                             .addComponent(jLabel4)
                             .addGap(5, 5, 5)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFContrasenaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(31, 31, 31)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(30, 30, 30)
                             .addComponent(jLabel1)
                             .addGap(5, 5, 5)
@@ -171,18 +197,18 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         });
         jPSignup.add(jTFCrearContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 230, -1));
 
-        jButton4.setText("Crear Cuenta");
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+        jBtnSignin.setText("Crear Cuenta");
+        jBtnSignin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
+                jBtnSigninMouseClicked(evt);
             }
         });
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jBtnSignin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jBtnSigninActionPerformed(evt);
             }
         });
-        jPSignup.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, -1, -1));
+        jPSignup.add(jBtnSignin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, -1, -1));
 
         jLabel11.setText("Edad");
         jPSignup.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 40, -1));
@@ -203,9 +229,9 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jTFContrasenaLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFContrasenaLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jTFContrasenaLoginActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -215,44 +241,85 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFCrearContraseñaActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jBtnSigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSigninActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jBtnSigninActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
        jPLogin.setVisible(false);
        jPSignup.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
 
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+    private void jBtnSigninMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnSigninMouseClicked
         String tipoU = (String)jCBtipoUsuario.getSelectedItem();
         int edad = (Integer)jSEdad.getValue();
-        File archivo = null;
-        FileReader fr = null;
-        BufferedReader br = null;
+        AdministrarUsuarios ap = new AdministrarUsuarios();
+        ap.administrarUsuarios("./Usuarios");
+        ap.cargarArchivo();
+        Artista artista = new Artista();
+        Oyente oyente = new Oyente();
+        try{
+            
+            
         if(edad>=18){
+            
             if (tipoU.equalsIgnoreCase("Artista")) {
-                String nombre = (String)jTFCrearUsuario.getText();
-                String contrasena = (String)jTFCrearContraseña.getText();
-                usuarios.add(new Artista(nombre, tipoU, contrasena, edad));
+                
+                artista.setnUsuario((String)jTFCrearUsuario.getText());
+                artista.setContrasena((String)jTFCrearContraseña.getText());
+                artista.setEdad(edad);
+                artista.setTipoUsuario(tipoU);
+               
             }else{
+                
                 String nombre = (String)jTFCrearUsuario.getText();
                 String contrasena = (String)jTFCrearContraseña.getText();
                 usuarios.add(new Oyente(nombre, tipoU, contrasena, edad));
             }
             JOptionPane.showMessageDialog(jPSignup, "Usuario creado exitosamente");
         }else if(edad>=12){
+            
             if(tipoU.equalsIgnoreCase("Oyente")){
-                    String nombre = (String)jTFCrearUsuario.getText();
+                String nombre = (String)jTFCrearUsuario.getText();
                 String contrasena = (String)jTFCrearContraseña.getText();
                 usuarios.add(new Oyente(nombre, tipoU, contrasena, edad));
+                JOptionPane.showMessageDialog(jPSignup, "Usuario creado exitosamente");
             }else{
               JOptionPane.showMessageDialog(jPSignup, "Edad no valida");  
             }
         }else{
             JOptionPane.showMessageDialog(jPSignup, "Edad no valida");
         }
-    }//GEN-LAST:event_jButton4MouseClicked
+        }catch(Exception e){            
+        }
+        ap.getListaUsuarios().add(artista);        
+        try {
+            ap.escribirArchivo();
+        } catch (IOException ex) {
+            Logger.getLogger(Lab6P2_LuisMontalvan.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jBtnSigninMouseClicked
+
+    private void jBtnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnLoginMouseClicked
+        AdministrarUsuarios ap = new AdministrarUsuarios();
+        ap.administrarUsuarios("./Usuarios");
+        ap.cargarArchivo();
+        int bandera,pos = 0;
+        for (Usuario u : ap.getListaUsuarios()) {
+            String utemp= u.getnUsuario();
+            if(jTFUserLogin.equals(utemp)){
+                //pos= ap.getListaUsuarios().indexOf(u);
+                
+                String ctemp = u.getContrasena();
+                if(jTFContrasenaLogin.equals(ctemp)){
+                    jPHomePage.setVisible(true);
+                }
+            }
+            
+        }
+        System.out.println(ap.getListaUsuarios().ge);
+    }//GEN-LAST:event_jBtnLoginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -290,9 +357,9 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jBtnLogin;
+    private javax.swing.JButton jBtnSignin;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jCBtipoUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -307,13 +374,14 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPHomePage;
     private javax.swing.JPanel jPLogin;
     private javax.swing.JPanel jPSignup;
     private javax.swing.JSpinner jSEdad;
+    private javax.swing.JTextField jTFContrasenaLogin;
     private javax.swing.JTextField jTFCrearContraseña;
     private javax.swing.JTextField jTFCrearUsuario;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTFUserLogin;
     // End of variables declaration//GEN-END:variables
     ArrayList<Usuario> usuarios = new ArrayList();
 }
