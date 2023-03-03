@@ -4,6 +4,9 @@
  */
 package lab6p2_luismontalvan;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author luism
@@ -15,6 +18,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
      */
     public Lab6P2_LuisMontalvan() {
         initComponents();
+        jPSignup.setVisible(false);
         
     }
 
@@ -27,6 +31,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPLogin = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -36,41 +41,161 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jPSignup = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jSEdad = new javax.swing.JSpinner();
+        jLabel9 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("Iniciar Sesión");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
 
         jLabel3.setText("Usuario");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 230, -1));
 
         jLabel4.setText("Contraseña");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 230, -1));
 
         jButton1.setText("Entrar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 80, 30));
 
-        jLabel1.setText("¿No tienes cuenta? Crea una tocando el boton");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 250, -1));
+        jLabel1.setText("¿No tienes cuenta?");
 
         jButton2.setText("Crear Cuenta");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, -1, -1));
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 230, 500));
+
+        javax.swing.GroupLayout jPLoginLayout = new javax.swing.GroupLayout(jPLogin);
+        jPLogin.setLayout(jPLoginLayout);
+        jPLoginLayout.setHorizontalGroup(
+            jPLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPLoginLayout.createSequentialGroup()
+                .addComponent(jLabel10)
+                .addGap(0, 600, Short.MAX_VALUE))
+            .addGroup(jPLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPLoginLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPLoginLayout.createSequentialGroup()
+                            .addGap(190, 190, 190)
+                            .addComponent(jLabel2))
+                        .addComponent(jLabel3)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPLoginLayout.createSequentialGroup()
+                            .addGap(180, 180, 180)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPLoginLayout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPLoginLayout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(jButton2)))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPLoginLayout.setVerticalGroup(
+            jPLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPLoginLayout.createSequentialGroup()
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 253, Short.MAX_VALUE))
+            .addGroup(jPLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPLoginLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPLoginLayout.createSequentialGroup()
+                            .addGap(60, 60, 60)
+                            .addComponent(jLabel2)
+                            .addGap(55, 55, 55)
+                            .addComponent(jLabel3)
+                            .addGap(5, 5, 5)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(21, 21, 21)
+                            .addComponent(jLabel4)
+                            .addGap(5, 5, 5)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(31, 31, 31)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(30, 30, 30)
+                            .addComponent(jLabel1)
+                            .addGap(5, 5, 5)
+                            .addComponent(jButton2))
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        getContentPane().add(jPLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPSignup.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setText("Crear Cuenta");
+        jPSignup.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, -1, -1));
+
+        jLabel7.setText("Usuario");
+        jPSignup.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+        jPSignup.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 230, -1));
+
+        jLabel8.setText("Contraseña");
+        jPSignup.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        jPSignup.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 230, -1));
+
+        jButton4.setText("Crear Cuenta");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPSignup.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, -1, -1));
+
+        jLabel11.setText("Edad");
+        jPSignup.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 40, -1));
+
+        jSEdad.setModel(new javax.swing.SpinnerNumberModel(18, 0, 120, 1));
+        jPSignup.add(jSEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 60, -1));
+
+        jLabel9.setText("Tipo de Usuario");
+        jPSignup.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oyente", "Artista" }));
+        jPSignup.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 99, -1));
+        jPSignup.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 0, 250, 500));
+        jPSignup.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 260));
+
+        getContentPane().add(jPSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -82,6 +207,26 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+       jPLogin.setVisible(false);
+       jPSignup.setVisible(true);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        if () {
+            
+        }
+        JOptionPane.showMessageDialog(jPSignup, "Usuario creado exitosamente");
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -121,12 +266,28 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPLogin;
+    private javax.swing.JPanel jPSignup;
+    private javax.swing.JSpinner jSEdad;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+    ArrayList<Usuario> usuarios = new ArrayList();
 }
