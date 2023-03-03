@@ -4,6 +4,9 @@
  */
 package lab6p2_luismontalvan;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -224,6 +227,9 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         String tipoU = (String)jCBtipoUsuario.getSelectedItem();
         int edad = (Integer)jSEdad.getValue();
+        File archivo = null;
+        FileReader fr = null;
+        BufferedReader br = null;
         if(edad>=18){
             if (tipoU.equalsIgnoreCase("Artista")) {
                 String nombre = (String)jTFCrearUsuario.getText();
