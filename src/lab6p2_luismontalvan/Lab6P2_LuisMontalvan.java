@@ -45,14 +45,14 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         jPSignup = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTFCrearUsuario = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jTFCrearContraseña = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jSEdad = new javax.swing.JSpinner();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jCBtipoUsuario = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
 
@@ -156,17 +156,17 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
 
         jLabel7.setText("Usuario");
         jPSignup.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
-        jPSignup.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 230, -1));
+        jPSignup.add(jTFCrearUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 230, -1));
 
         jLabel8.setText("Contraseña");
         jPSignup.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        jTFCrearContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                jTFCrearContraseñaActionPerformed(evt);
             }
         });
-        jPSignup.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 230, -1));
+        jPSignup.add(jTFCrearContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 230, -1));
 
         jButton4.setText("Crear Cuenta");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -190,8 +190,8 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         jLabel9.setText("Tipo de Usuario");
         jPSignup.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oyente", "Artista" }));
-        jPSignup.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 99, -1));
+        jCBtipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oyente", "Artista" }));
+        jPSignup.add(jCBtipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 99, -1));
         jPSignup.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 0, 250, 500));
         jPSignup.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 260));
 
@@ -208,9 +208,9 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void jTFCrearContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCrearContraseñaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_jTFCrearContraseñaActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -222,10 +222,30 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        if () {
-            
+        String tipoU = (String)jCBtipoUsuario.getSelectedItem();
+        int edad = (Integer)jSEdad.getValue();
+        if(edad>=18){
+            if (tipoU.equalsIgnoreCase("Artista")) {
+                String nombre = (String)jTFCrearUsuario.getText();
+                String contrasena = (String)jTFCrearContraseña.getText();
+                usuarios.add(new Artista(nombre, tipoU, contrasena, edad));
+            }else{
+                String nombre = (String)jTFCrearUsuario.getText();
+                String contrasena = (String)jTFCrearContraseña.getText();
+                usuarios.add(new Oyente(nombre, tipoU, contrasena, edad));
+            }
+            JOptionPane.showMessageDialog(jPSignup, "Usuario creado exitosamente");
+        }else if(edad>=12){
+            if(tipoU.equalsIgnoreCase("Oyente")){
+                    String nombre = (String)jTFCrearUsuario.getText();
+                String contrasena = (String)jTFCrearContraseña.getText();
+                usuarios.add(new Oyente(nombre, tipoU, contrasena, edad));
+            }else{
+              JOptionPane.showMessageDialog(jPSignup, "Edad no valida");  
+            }
+        }else{
+            JOptionPane.showMessageDialog(jPSignup, "Edad no valida");
         }
-        JOptionPane.showMessageDialog(jPSignup, "Usuario creado exitosamente");
     }//GEN-LAST:event_jButton4MouseClicked
 
     /**
@@ -267,7 +287,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jCBtipoUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -284,10 +304,10 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     private javax.swing.JPanel jPLogin;
     private javax.swing.JPanel jPSignup;
     private javax.swing.JSpinner jSEdad;
+    private javax.swing.JTextField jTFCrearContraseña;
+    private javax.swing.JTextField jTFCrearUsuario;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
     ArrayList<Usuario> usuarios = new ArrayList();
 }
