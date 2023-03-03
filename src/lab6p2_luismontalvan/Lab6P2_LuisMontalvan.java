@@ -15,6 +15,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
      */
     public Lab6P2_LuisMontalvan() {
         initComponents();
+        
     }
 
     /**
@@ -34,6 +35,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,6 +70,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 230, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -122,6 +125,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
