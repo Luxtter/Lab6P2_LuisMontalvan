@@ -28,6 +28,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         initComponents();
         jPSignup.setVisible(false);
         jPHomePageA.setVisible(false);
+        jPHomePageO.setVisible(false);
     }
 
     /**
@@ -48,8 +49,6 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         jTree1 = new javax.swing.JTree();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jPHomePageA = new javax.swing.JPanel();
-        jToolBar1 = new javax.swing.JToolBar();
         jPLogin = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -74,6 +73,13 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         jCBtipoUsuario = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jPHomePageA = new javax.swing.JPanel();
+        jToolBar3 = new javax.swing.JToolBar();
+        jBtnCrearPlaylists1 = new javax.swing.JButton();
+        jBtnAgregarFav1 = new javax.swing.JButton();
+        jBtnSalir1 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTree2 = new javax.swing.JTree();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,13 +139,6 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPHomePageO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jPHomePageA.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jToolBar1.setRollover(true);
-        jPHomePageA.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 30));
-
-        getContentPane().add(jPHomePageA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel2.setText("Iniciar Sesión");
 
@@ -286,6 +285,65 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
 
         getContentPane().add(jPSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 500));
 
+        jToolBar3.setRollover(true);
+
+        jBtnCrearPlaylists1.setText("Crear Album");
+        jBtnCrearPlaylists1.setFocusable(false);
+        jBtnCrearPlaylists1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnCrearPlaylists1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBtnCrearPlaylists1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCrearPlaylists1ActionPerformed(evt);
+            }
+        });
+        jToolBar3.add(jBtnCrearPlaylists1);
+
+        jBtnAgregarFav1.setText("Crear Single");
+        jBtnAgregarFav1.setFocusable(false);
+        jBtnAgregarFav1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnAgregarFav1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBtnAgregarFav1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnAgregarFav1ActionPerformed(evt);
+            }
+        });
+        jToolBar3.add(jBtnAgregarFav1);
+
+        jBtnSalir1.setText("Cerrar Sesion");
+        jBtnSalir1.setFocusable(false);
+        jBtnSalir1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnSalir1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar3.add(jBtnSalir1);
+
+        treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("PlayLIsts");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Albums");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Singles");
+        treeNode1.add(treeNode2);
+        jTree2.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane3.setViewportView(jTree2);
+
+        javax.swing.GroupLayout jPHomePageALayout = new javax.swing.GroupLayout(jPHomePageA);
+        jPHomePageA.setLayout(jPHomePageALayout);
+        jPHomePageALayout.setHorizontalGroup(
+            jPHomePageALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jToolBar3, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addGroup(jPHomePageALayout.createSequentialGroup()
+                .addGap(147, 147, 147)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPHomePageALayout.setVerticalGroup(
+            jPHomePageALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPHomePageALayout.createSequentialGroup()
+                .addComponent(jToolBar3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 65, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPHomePageA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -337,6 +395,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
                 usuarios.add(new Oyente(nombre, tipoU, contrasena, edad));
             }
             JOptionPane.showMessageDialog(jPSignup, "Usuario creado exitosamente");
+            jPSignup.setVisible(false);
         }else if(edad>=12){
             
             if(tipoU.equalsIgnoreCase("Oyente")){
@@ -344,6 +403,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
                 String contrasena = (String)jTFCrearContraseña.getText();
                 usuarios.add(new Oyente(nombre, tipoU, contrasena, edad));
                 JOptionPane.showMessageDialog(jPSignup, "Usuario creado exitosamente");
+                jPSignup.setVisible(false);
             }else{
               JOptionPane.showMessageDialog(jPSignup, "Edad no valida");  
             }
@@ -367,6 +427,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         ap.cargarArchivo();
         int bandera,pos = 0;
         for (Usuario u : ap.getListaUsuarios()) {
+            pos = ap.getListaUsuarios().indexOf(u);
             String utemp1= u.getnUsuario();
             String utemp2= jTFUserLogin.getText();
             if(utemp1.equals(utemp2)){
@@ -375,7 +436,12 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
                 String ctemp1 = u.getContrasena();
                 String ctemp2 = jTFContrasenaLogin.getText();
                 if(ctemp1.equals(ctemp2)){
-                    jPHomePageA.setVisible(true);
+                    if (ap.getListaUsuarios().get(pos).getTipoUsuario().equalsIgnoreCase("Artista")) {
+                        jPHomePageA.setVisible(true);
+                    }else{
+                        jPHomePageO.setVisible(true);
+                    }
+                    
                     jPLogin.setVisible(false);
                 }
             }
@@ -387,6 +453,14 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     private void jBtnAgregarFavActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAgregarFavActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnAgregarFavActionPerformed
+
+    private void jBtnAgregarFav1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAgregarFav1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnAgregarFav1ActionPerformed
+
+    private void jBtnCrearPlaylists1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCrearPlaylists1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnCrearPlaylists1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -425,9 +499,12 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAgregarFav;
+    private javax.swing.JButton jBtnAgregarFav1;
     private javax.swing.JButton jBtnCrearPlaylists;
+    private javax.swing.JButton jBtnCrearPlaylists1;
     private javax.swing.JButton jBtnLogin;
     private javax.swing.JButton jBtnSalir;
+    private javax.swing.JButton jBtnSalir1;
     private javax.swing.JButton jBtnSignin;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jCBtipoUsuario;
@@ -452,13 +529,15 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     private javax.swing.JSpinner jSEdad;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTFContrasenaLogin;
     private javax.swing.JTextField jTFCrearContraseña;
     private javax.swing.JTextField jTFCrearUsuario;
     private javax.swing.JTextField jTFUserLogin;
-    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
+    private javax.swing.JToolBar jToolBar3;
     private javax.swing.JTree jTree1;
+    private javax.swing.JTree jTree2;
     // End of variables declaration//GEN-END:variables
     ArrayList<Usuario> usuarios = new ArrayList();
 }

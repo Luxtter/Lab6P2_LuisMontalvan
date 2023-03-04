@@ -10,13 +10,17 @@ import java.util.ArrayList;
  *
  * @author luism
  */
-public class Single {
+public class Single extends Lanzamientos{
     ArrayList<Cancion> cancion = new ArrayList();
 
     public Single() {
         super();
     }
 
+    public Single(String tipo, String titulo, String fecha, int likes) {
+        super(tipo, titulo, fecha, likes);
+    }
+    
     public ArrayList<Cancion> getCancion() {
         return cancion;
     }
@@ -27,7 +31,7 @@ public class Single {
 
     @Override
     public String toString() {
-        return "Single{" + "cancion=" + cancion + '}';
+        return titulo;
     }
     
     

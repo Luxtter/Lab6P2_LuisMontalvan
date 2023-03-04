@@ -73,7 +73,7 @@ public class Album extends Lanzamientos{
 
     @Override
     public String toString() {
-        return "Album{" + "canciones=" + canciones + ", cCanciones=" + cCanciones + '}';
+        return titulo;
     }
     
 }
