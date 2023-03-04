@@ -27,7 +27,7 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     public Lab6P2_LuisMontalvan() {
         initComponents();
         jPSignup.setVisible(false);
-        jPHomePage.setVisible(false);
+        jPHomePageA.setVisible(false);
     }
 
     /**
@@ -39,7 +39,17 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPHomePage = new javax.swing.JPanel();
+        jPHomePageO = new javax.swing.JPanel();
+        jToolBar2 = new javax.swing.JToolBar();
+        jBtnCrearPlaylists = new javax.swing.JButton();
+        jBtnAgregarFav = new javax.swing.JButton();
+        jBtnSalir = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jPHomePageA = new javax.swing.JPanel();
+        jToolBar1 = new javax.swing.JToolBar();
         jPLogin = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -68,18 +78,68 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPHomePageLayout = new javax.swing.GroupLayout(jPHomePage);
-        jPHomePage.setLayout(jPHomePageLayout);
-        jPHomePageLayout.setHorizontalGroup(
-            jPHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+        jToolBar2.setRollover(true);
+
+        jBtnCrearPlaylists.setText("Crear Playlist");
+        jBtnCrearPlaylists.setFocusable(false);
+        jBtnCrearPlaylists.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnCrearPlaylists.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jBtnCrearPlaylists);
+
+        jBtnAgregarFav.setText("Agregar Favoritas");
+        jBtnAgregarFav.setFocusable(false);
+        jBtnAgregarFav.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnAgregarFav.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBtnAgregarFav.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnAgregarFavActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(jBtnAgregarFav);
+
+        jBtnSalir.setText("Cerrar Sesion");
+        jBtnSalir.setFocusable(false);
+        jBtnSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jBtnSalir);
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Playlists");
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(jTree1);
+
+        jScrollPane2.setViewportView(jList1);
+
+        javax.swing.GroupLayout jPHomePageOLayout = new javax.swing.GroupLayout(jPHomePageO);
+        jPHomePageO.setLayout(jPHomePageOLayout);
+        jPHomePageOLayout.setHorizontalGroup(
+            jPHomePageOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPHomePageOLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69))
         );
-        jPHomePageLayout.setVerticalGroup(
-            jPHomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+        jPHomePageOLayout.setVerticalGroup(
+            jPHomePageOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPHomePageOLayout.createSequentialGroup()
+                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addGroup(jPHomePageOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane2))
+                .addGap(0, 57, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPHomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPHomePageO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPHomePageA.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jToolBar1.setRollover(true);
+        jPHomePageA.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 30));
+
+        getContentPane().add(jPHomePageA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel2.setText("Iniciar Sesión");
 
@@ -307,19 +367,26 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
         ap.cargarArchivo();
         int bandera,pos = 0;
         for (Usuario u : ap.getListaUsuarios()) {
-            String utemp= u.getnUsuario();
-            if(jTFUserLogin.equals(utemp)){
+            String utemp1= u.getnUsuario();
+            String utemp2= jTFUserLogin.getText();
+            if(utemp1.equals(utemp2)){
                 //pos= ap.getListaUsuarios().indexOf(u);
                 
-                String ctemp = u.getContrasena();
-                if(jTFContrasenaLogin.equals(ctemp)){
-                    jPHomePage.setVisible(true);
+                String ctemp1 = u.getContrasena();
+                String ctemp2 = jTFContrasenaLogin.getText();
+                if(ctemp1.equals(ctemp2)){
+                    jPHomePageA.setVisible(true);
+                    jPLogin.setVisible(false);
                 }
             }
             
         }
-        System.out.println(ap.getListaUsuarios().ge);
+        
     }//GEN-LAST:event_jBtnLoginMouseClicked
+
+    private void jBtnAgregarFavActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAgregarFavActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnAgregarFavActionPerformed
 
     /**
      * @param args the command line arguments
@@ -357,7 +424,10 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnAgregarFav;
+    private javax.swing.JButton jBtnCrearPlaylists;
     private javax.swing.JButton jBtnLogin;
+    private javax.swing.JButton jBtnSalir;
     private javax.swing.JButton jBtnSignin;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jCBtipoUsuario;
@@ -374,14 +444,21 @@ public class Lab6P2_LuisMontalvan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPHomePage;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JPanel jPHomePageA;
+    private javax.swing.JPanel jPHomePageO;
     private javax.swing.JPanel jPLogin;
     private javax.swing.JPanel jPSignup;
     private javax.swing.JSpinner jSEdad;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTFContrasenaLogin;
     private javax.swing.JTextField jTFCrearContraseña;
     private javax.swing.JTextField jTFCrearUsuario;
     private javax.swing.JTextField jTFUserLogin;
+    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JToolBar jToolBar2;
+    private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
     ArrayList<Usuario> usuarios = new ArrayList();
 }
